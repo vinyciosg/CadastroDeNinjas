@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "tb_Cadastro")
 public class NinjaModel {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
