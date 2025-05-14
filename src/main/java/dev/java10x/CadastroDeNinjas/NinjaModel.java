@@ -6,14 +6,12 @@ import jakarta.persistence.*;
 @Table(name = "tb_Cadastro")
 public class NinjaModel {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String nome;
     String idade;
     String email;
-    String vila;
 
     public NinjaModel() {
     }
