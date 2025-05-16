@@ -1,17 +1,24 @@
 package dev.java10x.CadastroDeNinjas;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
+// Entity ela tranforma uma classe em uma entidade
 @Entity
 @Table(name = "tb_Cadastro")
 public class NinjaModel {
 
+    // para o meu ID ser preenchido com algo
     @Id
+    // gerado automaticamento com numeros sequenciais 1,2,3,4,5,6
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String nome;
-    String idade;
-    String email;
+    private Long id;
+    private String nome;
+    private String idade;
+    private String email;
 
     public NinjaModel() {
     }
