@@ -1,10 +1,10 @@
-package dev.java10x.CadastroDeNinjas;
+package dev.java10x.CadastroDeNinjas.NInjas;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import dev.java10x.CadastroDeNinjas.Missoes.MissoesModel;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // Entity ela tranforma uma classe em uma entidade
 @Entity
@@ -12,13 +12,22 @@ import jakarta.persistence.GenerationType;
 public class NinjaModel {
 
     // para o meu ID ser preenchido com algo
-    @Id
     // gerado automaticamento com numeros sequenciais 1,2,3,4,5,6
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String idade;
+
     private String email;
+
+    // @ManyToOne - varios Ninjas tem uma única missão
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // Foreing kay ou chave estrangeira
+    private MissoesModel missoes;
+
 
     public NinjaModel() {
     }
